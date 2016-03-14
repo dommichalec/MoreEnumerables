@@ -19,22 +19,22 @@ def fetch_the_first_two(input)
   input.take(2)
 end
 
-def fetch_CD_animals(input)
-  input.select { |animal| animal == 'cat' || animal == 'dog' }
+def fetch_cd_animals(input)
+  input.select { |animal| animal.start_with? %w(c d) }
 end
 
 ## DO NOT CHANGE CODE BELOW THIS LINE ##
 
-animals = ["cat", "moose", "dog", "bird"]
+animals = %w(cat moose dog bird)
 
-p capitalize_each_string(animals) == ["Cat", "Moose", "Dog", "Bird"]
+p capitalize_each_string(animals) == %w(Cat Moose Dog Bird)
 
-p fetch_the_dog(animals) == ["dog"]
+p fetch_the_dog(animals) == %w(dog)
 
-p no_dogs_allowed(animals) == ["cat", "moose", "bird"]
+p no_dogs_allowed(animals) == %w(cat moose bird)
 
 p count_the_animals(animals) == 4
 
-p fetch_the_first_two(animals)  == ["cat", "moose"]
+p fetch_the_first_two(animals) == %w(cat moose)
 
-p fetch_CD_animals(animals) == ["cat", "dog"]
+p fetch_CD_animals(animals) == %w(cat dog)
